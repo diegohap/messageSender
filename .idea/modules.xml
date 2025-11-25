@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/messageSender-develop.iml" filepath="$PROJECT_DIR$/.idea/messageSender-develop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/messageSender.iml" filepath="$PROJECT_DIR$/.idea/messageSender.iml" />
     </modules>
   </component>
 </project>

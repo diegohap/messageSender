@@ -88,7 +88,7 @@ public class Main {
             JFrame frame = new JFrame("Message Scheduler Application");
             frame.setContentPane(new Pantalla1().getPanel1());
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(400, 300);
+            frame.setSize(500, 500);
             frame.setVisible(true);
         });
 
