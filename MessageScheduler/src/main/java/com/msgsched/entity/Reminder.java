@@ -19,5 +19,7 @@ public class Reminder {
     private LocalDateTime send; //send
     private boolean email; //to send by email
     private boolean whatsapp; //to send by whatsapp
+    private String emailAddress;
+    private String phoneNumber;
     private boolean state;
 }
