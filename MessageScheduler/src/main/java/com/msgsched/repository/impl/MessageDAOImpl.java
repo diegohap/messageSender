@@ -20,7 +20,7 @@ public class MessageDAOImpl implements MessageDAO {
 
     @Override
     public void save(Reminder reminder) throws SQLException {
-        String sql = "INSERT INTO message (message, send, email, whatsapp, state) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO message (message, send, email, whatsapp, emailAddress, phoneNumber, state) VALUES (?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement stm = null;
 
         try {
@@ -29,7 +29,9 @@ public class MessageDAOImpl implements MessageDAO {
             stm.setObject(2, reminder.getSend());
             stm.setBoolean(3, reminder.isEmail());
             stm.setBoolean(4, reminder.isWhatsapp());
-            stm.setBoolean(5, reminder.isState());
+            stm.setString(5, reminder.getEmailAddress());
+            stm.setString(6, reminder.getPhoneNumber());
+            stm.setBoolean(7, reminder.isState());
             stm.executeUpdate();
         }
         catch (SQLException e) {
@@ -66,6 +68,8 @@ public class MessageDAOImpl implements MessageDAO {
                         .send(rs.getObject("send", java.time.LocalDateTime.class))
                         .email(rs.getBoolean("email"))
                         .whatsapp(rs.getBoolean("whatsapp"))
+                        .emailAddress(rs.getString("emailAddress"))
+                        .phoneNumber(rs.getString("phoneNumber"))
                         .state(rs.getBoolean("state"))
                         .build();
             }
@@ -101,6 +105,8 @@ public class MessageDAOImpl implements MessageDAO {
                         .send(rs.getObject("send", java.time.LocalDateTime.class))
                         .email(rs.getBoolean("email"))
                         .whatsapp(rs.getBoolean("whatsapp"))
+                        .emailAddress(rs.getString("emailAddress"))
+                        .phoneNumber(rs.getString("phoneNumber"))
                         .state(rs.getBoolean("state"))
                         .build();
                 reminders.add(reminder);
@@ -163,6 +169,8 @@ public class MessageDAOImpl implements MessageDAO {
                         .send(rs.getObject("send", java.time.LocalDateTime.class))
                         .email(rs.getBoolean("email"))
                         .whatsapp(rs.getBoolean("whatsapp"))
+                        .emailAddress(rs.getString("emailAddress"))
+                        .phoneNumber(rs.getString("phoneNumber"))
                         .state(rs.getBoolean("state"))
                         .build();
             }
